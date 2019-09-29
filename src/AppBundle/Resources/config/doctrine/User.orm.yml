@@ -1,0 +1,24 @@
+doctrine:
+  orm:
+    auto_mapping: true
+    mappings:
+      AppBundle:
+        type: yaml
+        dir: Resources/config/doctrine
+
+AppBundle\Entity\User:
+  type:  entity
+  table: fos_user
+  repositoryClass: AppBundle\Repository\UserRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    lastUpdatedPasswordDate:
+      column: last_update_password_date
+      type: datetime
+      nullable: true
+      options:
+        default: null

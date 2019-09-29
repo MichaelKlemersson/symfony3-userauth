@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+#  app:
+#    image: ambientum/php:7.3-nginx
+#    container_name: 'userauth-app'
+#    volumes:
+#      - ./:/var/www/app
+#    ports:
+#      - 8080:8080
+
+  db:
+    container_name: 'userauth-db'
+    image: mariadb:latest
+    environment:
+      MYSQL_DATABASE: userauth
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
